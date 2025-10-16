@@ -79,7 +79,7 @@ nav {
   align-items: center;
   font-weight: 500;
   color: #333;
-  padding: 0 0.25rem; /* Small padding inside link */
+  padding: 0 0.25rem;
   cursor: pointer;
   transition: color 0.3s;
 }
@@ -105,7 +105,6 @@ nav {
 .nav-links a.active::before {
   color: #22543d;
 }
-
 
 /* Sections */
 section { padding: 4rem 1rem 2rem; max-width:1200px; margin:0 auto; display:none; }
@@ -154,11 +153,16 @@ p { margin-top:0.5rem; color:#4a5568; }
 footer { text-align:center; color:#718096; padding:2rem 1rem; border-top:1px solid #e2e8f0; margin-top:3rem; font-family:'Inter', sans-serif; }
 footer p:first-child { font-weight:600; margin-bottom:0.5rem; }
 
+#feedback h2,
+#feedback p {
+  text-align: center;
+}
+
 /* Mobile */
 @media(max-width:768px){
   /* NAV */
   .nav-links {
-    justify-content: center;  /* Keep buttons centered on mobile */
+    justify-content: center;
     gap: 0.25rem;
     flex-wrap: wrap;
   }
@@ -173,7 +177,7 @@ footer p:first-child { font-weight:600; margin-bottom:0.5rem; }
 
   /* MENU IMAGE */
   #menu img {
-    max-width: 90%;  /* bigger image on mobile */
+    max-width: 90%;
     height: auto;
     display: block;
     margin: 0 auto;
@@ -198,12 +202,9 @@ footer p:first-child { font-weight:600; margin-bottom:0.5rem; }
   .event { flex-direction: column; align-items: flex-start; }
 
   /* FOOTER */
-  footer { text-align: center; }
-  footer p { margin-bottom: 0.5rem; }
+  footer p { text-align: center; display: block; }
   footer .footer-contact { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem; }
 }
-
-
 </style>
 </head>
 <body>
@@ -221,8 +222,8 @@ footer p:first-child { font-weight:600; margin-bottom:0.5rem; }
   <div class="nav-links">
     <a data-section="home" class="active">Home</a>
     <a data-section="menu">Menu</a>
-    <a data-section="schedule">Popup Schedule</a>
-    <a href="https://tinyurl.com/jojosmatchaoct16" target="_blank" rel="noopener noreferrer">Pop-up RSVP</a>
+    <a data-section="schedule">PopUp Schedule</a>
+    <a href="https://tinyurl.com/jojosmatchaoct16" target="_blank" rel="noopener noreferrer">PopUp RSVP</a>
     <a data-section="ordering">Ordering Services</a>
     <a data-section="about">About</a>
     <a data-section="feedback">Feedback</a>
@@ -281,7 +282,7 @@ footer p:first-child { font-weight:600; margin-bottom:0.5rem; }
 
 <!-- Schedule -->
 <section id="schedule">
-  <h2>Popup Schedule</h2>
+  <h2>PopUp Schedule</h2>
   <p>Rsvp for our popup to get exact location and more details!</p>
   <div style="margin-top:1rem;">
     <div class="event"><div>@UTD</div><div>TBD · 11am–3pm</div></div>
@@ -312,7 +313,7 @@ footer p:first-child { font-weight:600; margin-bottom:0.5rem; }
 <!-- Footer -->
 <footer>
   <p>JoJo's Matcha — small-batch ceremonial & flavored matcha.</p>
-  <p>Email: <a href="mailto:jojosmatchas@gmail.com">jojosmatchas@gmail.com</a> | Instagram: <a href="https://instagram.com/jojosmatcha" target="_blank">@jojosmatcha</a> | TikTok: <a href="https://www.tiktok.com/@jojosmatcha" target="_blank">@jojosmatcha</a></p>
+  <p class="footer-contact">Email: <a href="mailto:jojosmatchas@gmail.com">jojosmatchas@gmail.com</a> | Instagram: <a href="https://instagram.com/jojosmatcha" target="_blank">@jojosmatcha</a> | TikTok: <a href="https://www.tiktok.com/@jojosmatcha" target="_blank">@jojosmatcha</a></p>
 </footer>
 
 <!-- JS -->
