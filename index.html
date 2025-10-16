@@ -26,6 +26,8 @@ nav {
   display: flex;
   flex-direction: column;
   align-items: center;
+  border-bottom: 1px solid #e2e8f0;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
 
 .logo-container {
@@ -33,32 +35,33 @@ nav {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap:5rem;
-  background-color:#4A5B2F;
-  padding:0.5rem 0;
-  position:relative;
+  gap: 5rem;
+  background-color: #4A5B2F;
+  padding: 0.5rem 0;
+  position: relative;
 }
 
-/* Text on the left */
-.logo-text {
-  color:#fff;
-  text-align:left;
-  position:absolute;
-  left:2rem;
+.logo-container img {
+  height: 100px; /* slightly bigger logo */
+  width: auto;
+  object-fit: contain;
 }
+
+.logo-text {
+  color: #fff;
+  text-align: left;
+  position: absolute;
+  left: 20rem;
+}
+
 .logo-text .title {
   font-family:'Playfair Display', serif;
   font-size:1.5rem;
   font-weight:700;
 }
+
 .logo-text .subtitle {
   font-size:0.85rem;
-}
-
-/* Logo centered */
-.logo-container img {
-  height:100px; /* slightly bigger */
-  width:auto;
 }
 
 /* Navigation links below logo */
@@ -115,17 +118,13 @@ p { margin-top:0.5rem; color:#4a5568; }
 /* Schedule */
 .event { display:flex; justify-content:space-between; background:var(--bg-color); padding:0.75rem; border-radius:0.5rem; margin-bottom:0.75rem; box-shadow:0 2px 6px rgba(0,0,0,0.05); flex-wrap:wrap; }
 
-/* Forms */
-form input, form textarea, form select { width:100%; padding:0.85rem; border:1px solid #e2e8f0; border-radius:0.5rem; margin-bottom:0.5rem; font-size:0.95rem; }
-form textarea { resize:vertical; }
-
 /* Footer */
 footer { text-align:center; color:#718096; padding:2rem 1rem; border-top:1px solid #e2e8f0; margin-top:3rem; font-family:'Inter', sans-serif; }
 footer p:first-child { font-weight:600; margin-bottom:0.5rem; }
 
 /* Mobile Responsive */
 @media(max-width:768px){
-  .nav-links { flex-direction:column; gap:0.5rem; }
+  .nav-links { flex-direction: row; flex-wrap: wrap; justify-content: space-around; gap:0.5rem; }
   .hero img { max-width:100%; }
   .cards { flex-direction:column; }
   .event { flex-direction:column; align-items:flex-start; }
@@ -145,16 +144,16 @@ footer p:first-child { font-weight:600; margin-bottom:0.5rem; }
     </div>
 
     <!-- Logo centered -->
-    <img src="logof.JPG" alt="JoJo's Matcha Logo">
+    <img src="logo-banner.png" alt="JoJo's Matcha Logo">
   </div>
 
   <div class="nav-links">
     <a data-section="home" class="active">Home</a>
-    <a data-section="about">About</a>
     <a data-section="menu">Menu</a>
     <a data-section="schedule">Schedule</a>
-    <a data-section="rsvp">RSVP</a>
+    <a href="https://tinyurl.com/jojosmatchaoct16" target="_blank" class="external-link">RSVP</a>
     <a data-section="ordering">Ordering Services</a>
+    <a data-section="about">About</a>
   </div>
 </nav>
 
@@ -165,7 +164,7 @@ footer p:first-child { font-weight:600; margin-bottom:0.5rem; }
     <h1 style="font-family:'Playfair Display', serif; font-size:2rem; color:#22543d;">JoJo's Matcha</h1>
     <div style="display:flex; gap:1rem; flex-wrap:wrap; justify-content:center; margin-top:1rem;">
       <button class="btn btn-primary" onclick="showSection('menu')">View Menu</button>
-      <button class="btn btn-secondary" onclick="showSection('rsvp')">RSVP</button>
+     <button class="btn btn-secondary" onclick="window.open('https://tinyurl.com/jojosmatchaoct16', '_blank')">RSVP</button>
     </div>
   </div>
 </section>
@@ -203,14 +202,8 @@ footer p:first-child { font-weight:600; margin-bottom:0.5rem; }
     <div class="menu-item"><div>Hojicha (Limited)</div><div>$5.00</div></div>
   </div>
   <p style="margin-top:1rem; font-size:0.85rem;">*Ask about iced or hot. Ceremonial-grade available by request.</p>
-  
   <div style="margin-top:2rem; text-align:center;">
-    <img src="menu-image.jpg" 
-         alt="JoJo's Matcha Menu" 
-         style="max-width:70%; /* smaller than full width */
-                height:auto; 
-                border-radius:1rem; 
-                box-shadow:0 4px 12px rgba(0,0,0,0.1);">
+    <img src="menu-image.jpg" alt="JoJo's Matcha Menu" style="max-width:80%; border-radius:1rem; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
   </div>
 </section>
 
@@ -223,19 +216,18 @@ footer p:first-child { font-weight:600; margin-bottom:0.5rem; }
   </div>
 </section>
 
-<!-- RSVP for Pop-Up -->
+<!-- RSVP (empty for now) -->
 <section id="rsvp">
-  <h2>RSVP for Pop-Up</h2>
-  <p>Click the button below to RSVP for our next pop-up:</p>
-  <div style="margin-top:1rem; text-align:center;">
-    <a href="https://tinyurl.com/jojosmatchaoct16" target="_blank" class="btn btn-primary">RSVP Now</a>
-  </div>
+  <h2>RSVP for Popup</h2>
+  <p>Content coming soon.</p>
 </section>
 
 <!-- Ordering Services -->
 <section id="ordering">
-  <h2>Ordering Services</h2>
+  <h2>Schedule Pickup</h2>
   <p>Use the calendar below to schedule your pop-up visit or matcha pickup.</p>
+  
+  <!-- Calendly Embed -->
   <div style="margin-top:1.5rem;">
     <iframe 
       src="https://calendly.com/jojosmatchas" 
@@ -270,9 +262,12 @@ function showSection(sectionId) {
 
 navLinks.forEach(link => {
   link.addEventListener('click', e => {
-    e.preventDefault();
-    const sectionId = link.getAttribute('data-section');
-    showSection(sectionId);
+    // Skip SPA behavior for external RSVP link
+    if (!link.classList.contains('external-link')) {
+      e.preventDefault();
+      const sectionId = link.getAttribute('data-section');
+      showSection(sectionId);
+    }
   });
 });
 </script>
