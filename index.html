@@ -136,10 +136,48 @@ footer p:first-child { font-weight:600; margin-bottom:0.5rem; }
 
 /* Mobile */
 @media(max-width:768px){
-  .nav-links { flex-wrap: wrap; justify-content: space-around; }
-  .logo-text { left:1rem; position: relative; }
-  .cards { flex-direction:column; }
-  .event { flex-direction:column; align-items:flex-start; }
+  /* NAV */
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem; /* Reduced spacing between buttons */
+    padding: 0.5rem 0;
+  }
+
+  /* LOGO */
+  .logo-container img {
+    height: 120px; /* Slightly bigger logo image on mobile */
+  }
+
+  .logo-text {
+    position: relative;
+    left: 0;
+    text-align: center;
+    margin-top: 0.25rem;
+  }
+
+  /* MENU IMAGE ADJUSTMENT */
+  #menu img {
+    max-width: 80%; /* Make menu image larger on mobile */
+  }
+
+  #menu h2 {
+    font-size: 1.8rem; /* Slightly smaller title for better balance */
+  }
+
+  #menu p {
+    font-size: 1rem;
+  }
+
+  /* LAYOUT */
+  .cards {
+    flex-direction: column;
+  }
+
+  .event {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 </style>
 </head>
