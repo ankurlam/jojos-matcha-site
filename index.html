@@ -177,33 +177,69 @@ footer p:first-child { font-weight:600; margin-bottom:0.5rem; }
 
   /* MENU IMAGE */
   #menu img {
-    max-width: 90%;
-    height: auto;
-    display: block;
-    margin: 0 auto;
+    width: 95%;      /* make it almost full width */
+    max-width: 95%;  /* prevent it from exceeding container */
+    height: auto;    /* maintain aspect ratio */
+    border-radius: 1rem;
   }
   #menu h2 { font-size: 1.8rem; }
   #menu p { font-size: 1rem; }
 
   /* ABOUT SECTION */
+  /* About section adjustments */
   #about {
     padding: 2rem 1rem;
   }
+
+  #about h2 {
+    text-align: center;   /* Center the heading */
+    margin-bottom: 1rem;
+  }
+
   #about p {
     font-size: 1rem;
     line-height: 1.6;
     margin-bottom: 1rem;
+    text-align: center;   /* Center paragraphs for better mobile reading */
   }
-  #about .cards { flex-direction: column; gap: 1rem; margin-top: 1.5rem; }
-  #about .card { padding: 1rem; }
+
+  #about .cards {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;  /* Center cards */
+    margin-top: 1.5rem;
+  }
+
+  #about .card {
+    max-width: 300px;   /* Keep cards from stretching too wide */
+    width: 90%;         /* Make them responsive */
+    padding: 0.75rem;   /* Slightly smaller padding */
+    text-align: center; /* Center text inside cards */
+  }
 
   /* CARDS & EVENTS */
   .cards { flex-direction: column; }
   .event { flex-direction: column; align-items: flex-start; }
 
   /* FOOTER */
-  footer p { text-align: center; display: block; }
-  footer .footer-contact { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem; }
+  footer p {
+    display: flex;
+    flex-direction: column;  /* stack vertically for first paragraph */
+    align-items: center;     /* center everything horizontally */
+    gap: 0.5rem;             /* space between lines */
+  }
+
+  footer p:last-child {
+    flex-direction: row;      /* keep links in a row */
+    flex-wrap: wrap;          /* allow wrapping if necessary */
+    justify-content: center;  /* center horizontally */
+    gap: 0.5rem;              /* spacing between links */
+    text-align: center;       /* text centered */
+  }
+
+  footer a {
+    white-space: nowrap;      /* prevent link text from breaking mid-word */
+  }
 }
 </style>
 </head>
