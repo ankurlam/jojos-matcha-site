@@ -77,33 +77,35 @@ nav {
   position: relative;
   display: flex;
   align-items: center;
-  justify-content: center;
   font-weight: 500;
   color: #333;
-  padding: 0 0.25rem;
+  padding: 0 0.25rem; /* Small padding inside link */
   cursor: pointer;
   transition: color 0.3s;
 }
 
-/* Add separators before each link except first */
+/* Add separator before every link except first */
 .nav-links a:not(:first-child)::before {
   content: "|";
   display: inline-block;
-  margin: 0 0.5rem;
-  color: #8fbc8f;
+  margin-right: 0.25rem;
+  margin-left: 0.25rem;
+  color: #22543d;
   font-weight: 600;
   transition: color 0.3s;
 }
 
-/* Hover / active */
+/* Hover / active effect */
 .nav-links a:hover,
 .nav-links a.active {
   color: var(--primary-color);
 }
+
 .nav-links a:hover::before,
 .nav-links a.active::before {
   color: #22543d;
 }
+
 
 /* Sections */
 section { padding: 4rem 1rem 2rem; max-width:1200px; margin:0 auto; display:none; }
@@ -155,14 +157,14 @@ footer p:first-child { font-weight:600; margin-bottom:0.5rem; }
 /* Mobile */
 @media(max-width:768px){
   /* NAV */
-  .nav-links { 
-    justify-content: center; 
-    gap: 0.25rem; 
-    padding: 0.5rem 0; 
+  .nav-links {
+    justify-content: center;  /* Keep buttons centered on mobile */
+    gap: 0.25rem;
+    flex-wrap: wrap;
   }
-
   .nav-links a:not(:first-child)::before {
-    margin: 0 0.15rem;
+    margin-right: 0.15rem;
+    margin-left: 0.15rem;
   }
 
   /* LOGO */
@@ -171,25 +173,37 @@ footer p:first-child { font-weight:600; margin-bottom:0.5rem; }
 
   /* MENU IMAGE */
   #menu img {
-    max-width: 90%;   /* Bigger on mobile */
+    max-width: 90%;  /* bigger image on mobile */
     height: auto;
     display: block;
     margin: 0 auto;
-    border-radius: 1rem;
   }
   #menu h2 { font-size: 1.8rem; }
   #menu p { font-size: 1rem; }
 
-  /* ABOUT section spacing */
-  #about { padding: 2rem 1rem; }
-  #about p { font-size: 1rem; line-height: 1.6; margin-bottom: 1rem; }
+  /* ABOUT SECTION */
+  #about {
+    padding: 2rem 1rem;
+  }
+  #about p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
   #about .cards { flex-direction: column; gap: 1rem; margin-top: 1.5rem; }
   #about .card { padding: 1rem; }
 
-  /* Cards / Events layout */
+  /* CARDS & EVENTS */
   .cards { flex-direction: column; }
   .event { flex-direction: column; align-items: flex-start; }
+
+  /* FOOTER */
+  footer { text-align: center; }
+  footer p { margin-bottom: 0.5rem; }
+  footer .footer-contact { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem; }
 }
+
+
 </style>
 </head>
 <body>
@@ -261,7 +275,7 @@ footer p:first-child { font-weight:600; margin-bottom:0.5rem; }
   </div>
   <p style="margin-top:1rem; font-size:0.9rem; text-align:center;">* All drinks are iced *</p>
   <div style="margin-top:2rem; text-align:center;">
-    <img src="menu-image.jpg" alt="JoJo's Matcha Menu" style="border-radius:1rem;">
+    <img src="menu-image.jpg" alt="JoJo's Matcha Menu" style="max-width:50%; border-radius:1rem;">
   </div>
 </section>
 
