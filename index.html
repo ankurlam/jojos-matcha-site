@@ -382,6 +382,21 @@ footer p:first-child { font-weight:600; margin-bottom:0.5rem; }
       <button class="next" onclick="moveSlide(1)">&#10095;</button>
     </div>
   </div>
+
+    <div class="feedback-form">
+    <h2>Leave Us Feedback</h2>
+    <p>We’d love to hear your thoughts about JoJo’s Matcha!</p>
+    <form onsubmit="submitFeedback(event)">
+      <label for="name">Your Name</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="message">Your Feedback</label>
+      <textarea id="message" name="message" rows="4" required></textarea>
+
+      <button type="submit">Submit</button>
+    </form>
+    <p id="feedback-response" style="text-align:center; margin-top:1rem; font-weight:600; color:#22543d;"></p>
+  </div>
 </section>
 
 <style>
