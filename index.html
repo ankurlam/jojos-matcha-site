@@ -346,99 +346,99 @@ footer p:first-child { font-weight:600; margin-bottom:0.5rem; }
   <iframe src="https://calendly.com/jojosmatchas" width="100%" height="650" style="border:none; border-radius:0.75rem;"></iframe>
 </section>
 
-<!-- Feedback -->
-<section id="feedback">
 <!-- Customer Gallery / Carousel -->
-<div class="customer-gallery">
-  <h2>Our Customers</h2>
-  <p>See how others are enjoying JoJo’s Matcha!</p>
-  <div class="carousel-container">
-    <button class="carousel-nav prev">&#10094;</button>
-    <img src="images/gallery1.jpeg" alt="1" class="carousel-image">
-    <button class="carousel-nav next">&#10095;</button>
+<section id="feedback">
+  <div class="customer-gallery">
+    <h2>Our Customers</h2>
+    <p>See how others are enjoying JoJo’s Matcha!</p>
+
+    <div class="gallery-carousel">
+      <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+
+      <div class="gallery-slides">
+        <img src="https://raw.githubusercontent.com/ankurlam/jojos-matcha-site/main/gallery1.jpeg" alt="Happy customer enjoying matcha">
+        <img src="https://raw.githubusercontent.com/ankurlam/jojos-matcha-site/main/gallery2.jpeg" alt="Customer holding matcha cup">
+        <img src="https://raw.githubusercontent.com/ankurlam/jojos-matcha-site/main/gallery3.jpeg" alt="Matcha art in a café">
+        <img src="https://raw.githubusercontent.com/ankurlam/jojos-matcha-site/main/gallery4.jpeg" alt="Matcha art in a café">
+        <img src="https://raw.githubusercontent.com/ankurlam/jojos-matcha-site/main/gallery5.jpeg" alt="Matcha art in a café">
+        <img src="https://raw.githubusercontent.com/ankurlam/jojos-matcha-site/main/gallery6.jpeg" alt="Matcha art in a café">
+        <img src="https://raw.githubusercontent.com/ankurlam/jojos-matcha-site/main/gallery7.jpeg" alt="Matcha art in a café">
+        <img src="https://raw.githubusercontent.com/ankurlam/jojos-matcha-site/main/gallery8.jpeg" alt="Matcha art in a café">
+        <img src="https://raw.githubusercontent.com/ankurlam/jojos-matcha-site/main/gallery9.jpeg" alt="Matcha art in a café">
+        <img src="https://raw.githubusercontent.com/ankurlam/jojos-matcha-site/main/gallery10.jpeg" alt="Matcha art in a café">
+        <img src="https://raw.githubusercontent.com/ankurlam/jojos-matcha-site/main/gallery11.jpeg" alt="Matcha art in a café">
+        <img src="https://raw.githubusercontent.com/ankurlam/jojos-matcha-site/main/gallery12.jpeg" alt="Matcha art in a café">
+        <img src="https://raw.githubusercontent.com/ankurlam/jojos-matcha-site/main/gallery13.jpeg" alt="Matcha art in a café">
+        <img src="https://raw.githubusercontent.com/ankurlam/jojos-matcha-site/main/gallery14.jpeg" alt="Matcha art in a café">
+        <img src="https://raw.githubusercontent.com/ankurlam/jojos-matcha-site/main/gallery15.jpeg" alt="Matcha art in a café">
+        <img src="https://raw.githubusercontent.com/ankurlam/jojos-matcha-site/main/gallery16.jpeg" alt="Matcha art in a café">
+        <img src="https://raw.githubusercontent.com/ankurlam/jojos-matcha-site/main/gallery17.jpeg" alt="Matcha art in a café">
+        <img src="https://raw.githubusercontent.com/ankurlam/jojos-matcha-site/main/gallery18.jpeg" alt="Matcha art in a café">
+        <img src="https://raw.githubusercontent.com/ankurlam/jojos-matcha-site/main/gallery19.jpeg" alt="Matcha art in a café">
+        <img src="https://raw.githubusercontent.com/ankurlam/jojos-matcha-site/main/gallery20.jpeg" alt="Matcha art in a café">
+        <img src="https://raw.githubusercontent.com/ankurlam/jojos-matcha-site/main/gallery21.jpeg" alt="Matcha art in a café">
+      </div>
+
+      <button class="next" onclick="moveSlide(1)">&#10095;</button>
+    </div>
   </div>
-</div>
+</section>
 
 <style>
-.carousel-container {
+.customer-gallery {
+  text-align: center;
+  margin: 50px auto;
+  max-width: 700px;
+}
+
+.gallery-carousel {
   position: relative;
-  width: 100%;
-  max-width: 400px;
-  margin: 1.5rem auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   overflow: hidden;
-  border-radius: 1rem;
 }
-.carousel-image {
+
+.gallery-slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.gallery-slides img {
   width: 100%;
-  height: 300px;
-  object-fit: cover;
-  transition: transform 0.4s ease;
+  max-width: 700px;
+  border-radius: 15px;
+  margin: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
-.carousel-nav {
+
+.prev, .next {
+  background-color: rgba(0,0,0,0.5);
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 50%;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(255,255,255,0.6);
-  border: none;
-  font-size: 2rem;
   cursor: pointer;
-  padding: 0.5rem 1rem;
-  border-radius: 0.5rem;
-  user-select: none;
+  font-size: 24px;
+  z-index: 2;
 }
-.carousel-nav:hover { background: rgba(255,255,255,0.9); }
-.carousel-nav.prev { left: 5%; }
-.carousel-nav.next { right: 5%; }
-@media(max-width:768px){
-  .carousel-image { height: 200px; }
-  .carousel-nav { font-size: 1.5rem; padding: 0.3rem 0.6rem; }
-}
+
+.prev { left: 10px; }
+.next { right: 10px; }
 </style>
 
 <script>
-// Load all 28 images automatically
-const carouselImages = [];
-for (let i = 1; i <= 21; i++) {
-  carouselImages.push(`images/gallery${i}.jpeg`);
+let currentIndex = 0;
+function moveSlide(direction) {
+  const slides = document.querySelector('.gallery-slides');
+  const totalSlides = slides.children.length;
+  currentIndex = (currentIndex + direction + totalSlides) % totalSlides;
+  slides.style.transform = `translateX(-${currentIndex * 100}%)`;
 }
-
-let currentCarouselIndex = 0;
-const carouselImageElement = document.querySelector('.carousel-image');
-
-document.querySelector('.carousel-nav.prev').addEventListener('click', () => {
-  currentCarouselIndex = (currentCarouselIndex - 1 + carouselImages.length) % carouselImages.length;
-  carouselImageElement.src = carouselImages[currentCarouselIndex];
-});
-
-document.querySelector('.carousel-nav.next').addEventListener('click', () => {
-  currentCarouselIndex = (currentCarouselIndex + 1) % carouselImages.length;
-  carouselImageElement.src = carouselImages[currentCarouselIndex];
-});
-
-// Swipe support for mobile
-let startX = 0;
-carouselImageElement.addEventListener('touchstart', e => { startX = e.touches[0].clientX; });
-carouselImageElement.addEventListener('touchend', e => {
-  let endX = e.changedTouches[0].clientX;
-  if (endX - startX > 50) {
-    currentCarouselIndex = (currentCarouselIndex - 1 + carouselImages.length) % carouselImages.length;
-  } else if (startX - endX > 50) {
-    currentCarouselIndex = (currentCarouselIndex + 1) % carouselImages.length;
-  }
-  carouselImageElement.src = carouselImages[currentCarouselIndex];
-});
 </script>
-  <h2>Customer Feedback</h2>
-  <p>We’d love to hear your thoughts!</p>
-  <form class="feedback-form" onsubmit="submitFeedback(event)">
-    <label for="name">Your Name</label>
-    <input type="text" id="name" required>
-    <label for="message">Your Feedback</label>
-    <textarea id="message" rows="4" required></textarea>
-    <button type="submit">Submit</button>
-    <p id="feedback-response" style="margin-top:1rem; color:var(--primary-color); font-weight:600;"></p>
-  </form>
-</section>
 
 <!-- Footer -->
 <footer>
