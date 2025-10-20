@@ -416,13 +416,15 @@ footer p:first-child { font-weight:600; margin-bottom:0.5rem; }
 .gallery-slides {
   display: flex;
   transition: transform 0.5s ease-in-out;
+  width: 100%;
 }
 
 .gallery-slides img {
+  flex: 0 0 100%; /* each image takes full width of the container */
   width: 100%;
-  max-width: 700px;
+  max-width: none; /* override the old max-width:700px rule */
   border-radius: 15px;
-  margin: 10px;
+  margin: 0; /* remove extra space that causes cutoff */
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
