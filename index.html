@@ -246,6 +246,34 @@ footer p:first-child { font-weight:600; margin-bottom:0.5rem; }
   footer a {
     white-space: nowrap; /* Prevent links from breaking mid-word */
   }
+    /* Make "Next Matcha Class" appear first on mobile */
+  #classes {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #classes .next-class {
+    order: -1; /* move this above the cards */
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+
+  #classes .class-info {
+    order: 0; /* keep cards below */
+  }
+
+  #classes h3 {
+    font-size: 1.4rem;
+  }
+
+  #classes p {
+    font-size: 1rem;
+  }
+
+  #classes button {
+    width: 80%;
+    max-width: 280px;
+  }
 }
 </style>
 </head>
@@ -466,7 +494,8 @@ function moveSlide(direction) {
   <h2>Matcha Classes</h2>
   <p>Join us for an immersive experience in the art of matcha preparation and tasting!</p>
 
-  <div class="cards" style="margin-top:1.5rem;">
+  <!-- Info cards come first -->
+  <div class="cards class-info">
     <div class="card">
       <h4>What You'll Learn</h4>
       <p>Discover the origins of matcha, learn proper whisking techniques, and explore different grades and flavor profiles of Japanese matcha.</p>
@@ -481,17 +510,21 @@ function moveSlide(direction) {
     </div>
   </div>
 
-  <div style="margin-top:2rem; text-align:center;">
+  <!-- Next Matcha Class -->
+  <div class="next-class" style="text-align:center; margin-top:2rem;">
     <h3 style="color:#22543d;">Next Matcha Class</h3>
     <p style="font-size:1.1rem; margin-bottom:1rem;">Saturday, November 16th · 2:00 PM – 3:30 PM @ UTD</p>
 
-    <!-- Payment button (you can link to your Stripe, Venmo, or PayPal) -->
-    <button class="btn btn-primary" onclick="window.open('https://buy.stripe.com/test_link_here', '_blank')">Reserve Your Spot – $20</button>
+    <button class="btn btn-primary" onclick="window.open('https://buy.stripe.com/test_link_here', '_blank')">
+      Reserve Your Spot – $20
+    </button>
 
-    <p style="margin-top:1rem; font-size:0.9rem; color:#555;">Limited spots available. Payment secures your reservation.</p>
+    <p style="margin-top:1rem; font-size:0.9rem; color:#555;">
+      Limited spots available. Payment secures your reservation.
+    </p>
   </div>
 
-  <!--  <div style="margin-top:2rem; text-align:center;"> 
+  <!-- <div style="margin-top:2rem; text-align:center;">
     <img src="matcha-class.jpg" alt="Matcha class in session" style="max-width:80%; border-radius:1rem; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
   </div> -->
 </section>
