@@ -488,16 +488,36 @@ navLinks.forEach(link => {
     }
   });
 });
+</script>
 
-function submitFeedback(event) {
-  event.preventDefault();
-  const name = document.getElementById('name').value.trim();
-  const message = document.getElementById('message').value.trim();
-  if (name && message) {
-    document.getElementById('feedback-response').textContent = `Thank you for your feedback, ${name}!`;
-    event.target.reset();
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script>
+  (function() {
+    emailjs.init("uyom8bboh3OctPrWw"); // 
+  })();
+
+  function submitFeedback(event) {
+    event.preventDefault();
+    const name = document.getElementById('name').value.trim();
+    const message = document.getElementById('message').value.trim();
+
+    emailjs.send("service_orageke", "template_uxfm5ke", {
+      name: name,
+      message: message
+    }).then(
+      function() {
+        document.getElementById('feedback-response').textContent =
+          `Thank you for your feedback, ${name}!`;
+        event.target.reset();
+      },
+      function(error) {
+        document.getElementById('feedback-response').textContent =
+          'Oops! Something went wrong. Please try again.';
+        console.error('EmailJS Error:', error);
+      }
+    );
   }
-}
+
 
 
 
