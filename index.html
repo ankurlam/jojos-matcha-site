@@ -278,9 +278,14 @@ footer p:first-child { font-weight:600; margin-bottom:0.5rem; }
     <img src="IMG_3159.jpg" alt="JoJo's Matcha Hero">
     <h1 style="font-family:'Playfair Display', serif; font-size:2rem; color:#22543d;">JoJo's Matcha</h1>
     <div style="display:flex; gap:1rem; flex-wrap:wrap; justify-content:center; margin-top:1rem;">
-      <button class="btn btn-primary" onclick="showSection('menu')">View Menu</button>
-      <button class="btn btn-secondary" onclick="window.open('https://tinyurl.com/jojosmatchaoct16', '_blank')">Popup RSVP</button>
-    </div>
+  <button class="btn btn-primary" onclick="showSection('menu')">View Menu</button>
+  <button class="btn btn-secondary" onclick="window.open('https://tinyurl.com/jojosmatchaoct16', '_blank')">Popup RSVP</button>
+</div>
+
+<!-- New button below the first row -->
+<div style="text-align:center; margin-top:.1rem;">
+  <button class="btn btn-primary" onclick="showSection('classes')">Matcha Classes</button>
+</div>
   </div>
 </section>
 
@@ -456,6 +461,41 @@ function moveSlide(direction) {
 }
 </script>
 
+<!-- Matcha Classes -->
+<section id="classes">
+  <h2>Matcha Classes</h2>
+  <p>Join us for an immersive experience in the art of matcha preparation and tasting!</p>
+
+  <div class="cards" style="margin-top:1.5rem;">
+    <div class="card">
+      <h4>What You'll Learn</h4>
+      <p>Discover the origins of matcha, learn proper whisking techniques, and explore different grades and flavor profiles of Japanese matcha.</p>
+    </div>
+    <div class="card">
+      <h4>Includes</h4>
+      <p>All tools and matcha provided. You’ll take home your own matcha whisk and a bag of ceremonial-grade matcha.</p>
+    </div>
+    <div class="card">
+      <h4>Perfect For</h4>
+      <p>Students, tea lovers, and anyone curious about Japanese tea culture—no experience needed!</p>
+    </div>
+  </div>
+
+  <div style="margin-top:2rem; text-align:center;">
+    <h3 style="color:#22543d;">Next Matcha Class</h3>
+    <p style="font-size:1.1rem; margin-bottom:1rem;">Saturday, November 16th · 2:00 PM – 3:30 PM @ UTD</p>
+
+    <!-- Payment button (you can link to your Stripe, Venmo, or PayPal) -->
+    <button class="btn btn-primary" onclick="window.open('https://buy.stripe.com/test_link_here', '_blank')">Reserve Your Spot – $20</button>
+
+    <p style="margin-top:1rem; font-size:0.9rem; color:#555;">Limited spots available. Payment secures your reservation.</p>
+  </div>
+
+  <!--  <div style="margin-top:2rem; text-align:center;"> 
+    <img src="matcha-class.jpg" alt="Matcha class in session" style="max-width:80%; border-radius:1rem; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
+  </div> -->
+</section>
+
 <!-- Footer -->
 <footer>
   <p>JoJo's Matcha — small-batch ceremonial & flavored matcha.</p>
@@ -517,10 +557,6 @@ navLinks.forEach(link => {
       }
     );
   }
-
-
-
-
 </script>
 
 </body>
