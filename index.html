@@ -172,6 +172,14 @@ footer p:first-child { font-weight:600; margin-bottom:0.5rem; }
   text-align: center;
 }
 
+/* Force logo image to be slightly larger on desktop only */
+@media (min-width: 769px) {
+  nav .logo-container img {
+    height: 140px !important; /* increase image size */
+    margin-top: -10px; /* pull it up slightly so header height stays even */
+  }
+}
+
 /* Mobile */
 @media(max-width:768px){
   /* NAV */
