@@ -64,6 +64,20 @@ nav {
   font-size:0.85rem;
 }
 
+.logo-link {
+  display: flex;
+  align-items: center;
+  gap: 5rem;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.logo-link img {
+  height: 100px;
+  width: auto;
+  object-fit: contain;
+}
+
 /* Navigation links */
 .nav-links {
   display: flex;
@@ -161,18 +175,22 @@ footer p:first-child { font-weight:600; margin-bottom:0.5rem; }
 /* Mobile */
 @media(max-width:768px){
   /* NAV */
-  .nav-links a:not(:first-child)::before {
-    margin-left: 0.5rem;   /* reduce left spacing */
-    margin-right: 0.1rem;  /* reduce right spacing */
-  }
   .nav-links {
     justify-content: center;
     gap: 0.25rem;
     flex-wrap: wrap;
   }
+
   .nav-links a:not(:first-child)::before {
-    margin-right: 0.15rem;
-    margin-left: 0.15rem;
+    content: "|";
+    display: inline-block;
+    margin: 0 0.4rem; /* equal space on both sides of the separator */
+    color: #22543d;
+    font-weight: 600;
+  }
+
+  .nav-links a {
+    padding: 0 0.1rem; /* optional: ensures uniform spacing around text */
   }
 
   /* LOGO */
@@ -282,12 +300,14 @@ footer p:first-child { font-weight:600; margin-bottom:0.5rem; }
 <!-- Header -->
 <nav>
   <div class="logo-container">
+  <a href="#" class="logo-link" onclick="showSection('home'); return false;">
     <div class="logo-text">
       <span class="title">JoJo's Matcha</span><br>
       <span class="subtitle">Underground PopUp/Store</span>
     </div>
     <img src="logo-banner.png" alt="JoJo's Matcha Logo">
-  </div>
+  </a>
+</div>
 
   <div class="nav-links">
     <a data-section="home" class="active">Home</a>
@@ -432,6 +452,11 @@ footer p:first-child { font-weight:600; margin-bottom:0.5rem; }
 </section>
 
 <style>
+
+.gallery-carousel {
+  margin-top: 30px; /* adjust this number as you like */
+}
+
 .customer-gallery {
   text-align: center;
   margin: 50px auto;
@@ -494,7 +519,20 @@ function moveSlide(direction) {
   <h2>Matcha Classes</h2>
   <p>Join us for an immersive experience in the art of matcha preparation and tasting!</p>
 
-  <!-- Info cards come first -->
+  <!-- Next Matcha Class -->
+  <div class="next-class" style="text-align:center; margin-top:2rem;">
+    <h3 style="color:#22543d;">Next Matcha Class</h3>
+    <p style="font-size:1.1rem; margin-bottom:1rem;">Saturday, November 16th · 2:00 PM – 3:30 PM @ UTD</p>
+
+    <button class="btn btn-primary" onclick="window.open('https://buy.stripe.com/test_link_here', '_blank')">
+      Reserve Your Spot – $20
+    </button>
+
+    <p style="margin-top:1rem; font-size:0.9rem; color:#555;">
+      Limited spots available. Payment secures your reservation.
+    </p>
+  </div>
+
   <div class="cards class-info">
     <div class="card">
       <h4>What You'll Learn</h4>
@@ -510,19 +548,7 @@ function moveSlide(direction) {
     </div>
   </div>
 
-  <!-- Next Matcha Class -->
-  <div class="next-class" style="text-align:center; margin-top:2rem;">
-    <h3 style="color:#22543d;">Next Matcha Class</h3>
-    <p style="font-size:1.1rem; margin-bottom:1rem;">Saturday, November 16th · 2:00 PM – 3:30 PM @ UTD</p>
 
-    <button class="btn btn-primary" onclick="window.open('https://buy.stripe.com/test_link_here', '_blank')">
-      Reserve Your Spot – $20
-    </button>
-
-    <p style="margin-top:1rem; font-size:0.9rem; color:#555;">
-      Limited spots available. Payment secures your reservation.
-    </p>
-  </div>
 
   <!-- <div style="margin-top:2rem; text-align:center;">
     <img src="matcha-class.jpg" alt="Matcha class in session" style="max-width:80%; border-radius:1rem; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
