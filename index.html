@@ -185,8 +185,9 @@ footer p:first-child { font-weight:600; margin-bottom:0.5rem; }
   /* NAV */
   .nav-links {
     display: grid;
-    grid-template-columns: repeat(4, auto); /* 4 links per row */
+    grid-template-columns: repeat(4, auto); /* 4 links per row = 2 lines total */
     justify-content: center;
+    align-items: center;
     row-gap: 0.4rem;
     column-gap: 0.4rem;
     background-color: #f6f4ef;
@@ -196,10 +197,11 @@ footer p:first-child { font-weight:600; margin-bottom:0.5rem; }
   .nav-links a {
     text-align: center;
     font-size: 0.9rem;
-    padding: 0 0.1rem;
+    padding: 0 0.25rem;
+    white-space: nowrap; /* 🔒 Prevents text from breaking into two lines */
   }
 
-  /* Maintain | separators */
+  /* Keep | separators consistent */
   .nav-links a:not(:first-child)::before {
     content: "|";
     display: inline-block;
@@ -210,7 +212,12 @@ footer p:first-child { font-weight:600; margin-bottom:0.5rem; }
 
   /* LOGO */
   .logo-container img { height: 120px; }
-  .logo-text { position: relative; left: 0; text-align: center; margin-top: 0.25rem; }
+  .logo-text {
+    position: relative;
+    left: 0;
+    text-align: center;
+    margin-top: 0.25rem;
+  }
 
   /* MENU IMAGE */
   #menu img {
