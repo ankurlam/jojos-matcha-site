@@ -530,64 +530,64 @@ function moveSlide(direction) {
   <!-- Next Matcha Class -->
   <div class="next-class" style="text-align:center; margin-top:2rem;">
     <h3 style="color:#22543d;">Next Matcha Class</h3>
-    <p style="font-size:1.1rem; margin-bottom:1rem;">Saturday, November 16th · 2:00 PM – 3:30 PM @ UTD</p>
+    <p style="font-size:1.1rem; margin-bottom:1rem;">Thursday, October 30th · 11:00 AM – 2:00 PM @ UTD</p>
 
-   <!-- Reserve button -->
-<button id="reserveBtn" class="reserve-btn">Reserve Your Spot</button>
+    <!-- Reserve button -->
+    <button id="reserveBtn" class="reserve-btn">Reserve Your Spot</button>
 
-<!-- Modal overlay -->
-<div id="checkoutModal" class="checkout-modal">
-  <iframe 
-    src="https://checkout.square.site/merchant/MLWJA5R2NFYBH/checkout/43FXLTDF7XKBSN7XL46JFGM5"
-    class="checkout-frame">
-  </iframe>
-</div>
+    <!-- Modal overlay -->
+    <div id="checkoutModal" class="checkout-modal">
+      <iframe 
+        src="https://checkout.square.site/merchant/MLWJA5R2NFYBH/checkout/43FXLTDF7XKBSN7XL46JFGM5"
+        class="checkout-frame">
+      </iframe>
+    </div>
 
-<style>
-  /* ✳️ BUTTON STYLE */
-  .reserve-btn {
-    background-color: #033203; /* ← change this for your color */
-    color: white;
-    font-size: 1.2em;
-    padding: 12px 24px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: 0.2s ease-in-out;
-  }
+    <style>
+      /* ✳️ BUTTON STYLE */
+      .reserve-btn {
+        background-color: #033203;
+        color: white;
+        font-size: 1.2em;
+        padding: 12px 24px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: 0.2s ease-in-out;
+      }
 
-  .reserve-btn:hover {
-    background-color: #074b07; /* ← slightly darker for hover */
-  }
+      .reserve-btn:hover {
+        background-color: #074b07;
+      }
 
-  /* ✳️ MODAL STYLE */
-  .checkout-modal {
-    display: none;
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: rgba(0, 0, 0, 0.6);
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-  }
+      /* ✳️ MODAL STYLE */
+      .checkout-modal {
+        display: none;
+        position: fixed;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        background: rgba(0, 0, 0, 0.6);
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+      }
 
-  .checkout-frame {
-    width: 90%;
-    height: 90%;
-    border: none;
-    border-radius: 12px;
-    background: white;
-  }
-</style>
+      .checkout-frame {
+        width: 90%;
+        height: 90%;
+        border: none;
+        border-radius: 12px;
+        background: white;
+      }
+    </style>
 
-<script>
-  const btn = document.getElementById("reserveBtn");
-  const modal = document.getElementById("checkoutModal");
+    <script>
+      const btn = document.getElementById("reserveBtn");
+      const modal = document.getElementById("checkoutModal");
 
-  btn.onclick = () => modal.style.display = "flex";
-  modal.onclick = e => { if (e.target === modal) modal.style.display = "none"; };
-</script>
+      btn.onclick = () => modal.style.display = "flex";
+      modal.onclick = e => { if (e.target === modal) modal.style.display = "none"; };
+    </script>
 
     <p style="margin-top:1rem; font-size:0.9rem; color:#555;">
       Limited spots available. Payment secures your reservation.
@@ -597,23 +597,13 @@ function moveSlide(direction) {
   <div class="cards class-info">
     <div class="card">
       <h4>What You'll Learn</h4>
-      <p>Discover the origins of matcha, learn proper whisking techniques, and explore different grades and flavor profiles of Japanese matcha.</p>
+      <p>Learn how to whisk matcha properly and create the perfect microfoam for a smooth, balanced cup.</p>
     </div>
     <div class="card">
       <h4>Includes</h4>
-      <p>All tools and matcha provided. You’ll take home your own matcha whisk and a bag of ceremonial-grade matcha.</p>
-    </div>
-    <div class="card">
-      <h4>Perfect For</h4>
-      <p>Students, tea lovers, and anyone curious about Japanese tea culture—no experience needed!</p>
+      <p>Whisking class at UTD, a complimentary JoJo’s Matcha drink, and free entry into a raffle for a 100g bag of matcha.</p>
     </div>
   </div>
-
-
-
-  <!-- <div style="margin-top:2rem; text-align:center;">
-    <img src="matcha-class.jpg" alt="Matcha class in session" style="max-width:80%; border-radius:1rem; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
-  </div> -->
 </section>
 
 <!-- Footer -->
