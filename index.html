@@ -184,40 +184,26 @@ footer p:first-child { font-weight:600; margin-bottom:0.5rem; }
 @media(max-width:768px){
   /* NAV */
   .nav-links {
-    display: grid;
-    grid-template-columns: repeat(4, auto); /* 4 links per row = 2 lines total */
     justify-content: center;
-    align-items: center;
-    row-gap: 0.4rem;
-    column-gap: 0.4rem;
-    background-color: #f6f4ef;
-    padding: 0.75rem 0;
+    gap: 0.25rem;
+    flex-wrap: wrap;
   }
 
-  .nav-links a {
-    text-align: center;
-    font-size: 0.9rem;
-    padding: 0 0.25rem;
-    white-space: nowrap; /* 🔒 Prevents text from breaking into two lines */
-  }
-
-  /* Keep | separators consistent */
   .nav-links a:not(:first-child)::before {
     content: "|";
     display: inline-block;
-    margin: 0 0.25rem;
+    margin: 0 0.4rem; /* equal space on both sides of the separator */
     color: #22543d;
     font-weight: 600;
   }
 
+  .nav-links a {
+    padding: 0 0.1rem; /* optional: ensures uniform spacing around text */
+  }
+
   /* LOGO */
   .logo-container img { height: 120px; }
-  .logo-text {
-    position: relative;
-    left: 0;
-    text-align: center;
-    margin-top: 0.25rem;
-  }
+  .logo-text { position: relative; left: 0; text-align: center; margin-top: 0.25rem; }
 
   /* MENU IMAGE */
   #menu img {
